@@ -245,11 +245,8 @@ void raytracer(const char *config, int show) {
         trace = -trace;
       }
 
-      // /*
+      // show the ray
       if (show) {
-        
-        
-
         printf("sci. %2ld | ", j);
         for (long k = 0; k < n; ++k) {
           double lb, ub;
@@ -288,15 +285,15 @@ void raytracer(const char *config, int show) {
               if (e >= act_eps) {
                 ++nhits;
                 ++nshit[j - 1];
-                printf("1");
+                putchar('1');
               } else {
-                printf("2");
+                putchar('2');
               }
             } else {
-              printf("3");
+              putchar('3');
             }
           } else {
-            printf("0");
+            putchar('0');
           }
 #endif
         }
@@ -320,7 +317,7 @@ void raytracer(const char *config, int show) {
   }
 
   printf(
-    "[>] RESULTS\n"
+    ">>> RESULTS\n"
     "... act. = %ld\n"
     "... ang. = %.2e\n"
     "... eff. = %.2g%%\n",
